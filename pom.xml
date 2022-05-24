@@ -8,9 +8,9 @@
 		<version>2.1.7.RELEASE</version>
 		<relativePath/> <!-- lookup parent from repository -->
 	</parent>
-	<groupId>com.startandwayne</groupId>
+	<groupId>com.starkandwayne</groupId>
 	<artifactId>spring-cloud-config-server</artifactId>
-	<version>1.0.0-GSR3</version>
+	<version>1.0.9-GSR3</version>
 	<name>spring-cloud-config-server</name>
 	<description>Stark &amp; Wayne Spring Cloud Congfig Server for Greenwich SR3</description>
 	<properties>
@@ -22,6 +22,24 @@
 			<groupId>org.springframework.cloud</groupId>
 			<artifactId>spring-cloud-config-server</artifactId>
 		</dependency>
+		<dependency>
+		<groupId>org.springframework.credhub</groupId>
+		<artifactId>spring-credhub-starter</artifactId>
+		<version>2.1.1.RELEASE</version>
+	    </dependency>
+		<dependency>
+		<groupId>org.springframework.boot</groupId>
+		<artifactId>spring-boot-starter-actuator</artifactId>
+		<version>2.3.10.RELEASE</version>
+	    </dependency>
+		<dependency>
+		<groupId>org.springframework.security</groupId>
+		<artifactId>spring-security-config</artifactId>
+	</dependency>
+	<dependency>
+		<groupId>org.springframework.security</groupId>
+		<artifactId>spring-security-oauth2-client</artifactId>
+	</dependency>
 	</dependencies>
 	<dependencyManagement>
 		<dependencies>

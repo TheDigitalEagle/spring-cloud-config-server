@@ -9,6 +9,7 @@ spring:
           enabled: false
   credhub:
     url: https://credhub.service.cf.internal:8844/
+    path: "/fallback/url/path"
   security:
     oauth2:
       client:
@@ -24,7 +25,7 @@ spring:
         provider:
           uaa:
             token-uri: ${uaa.token-uri}
-            authorization-uri: ${uaa.authorization-uri}/oauth/authorize
+            authorization-uri: ${uaa.uri}/oauth/authorize
             jwk-set-uri: ${uaa.jwk-set-uri}
             user-info-uri: ${uaa.uri}/userinfo
             user-name-attribute: user_name
@@ -38,6 +39,7 @@ spring:
       use-registered-suffix-pattern: false
 
 uaa:
+  uri: https://uaa.ocfps.ics-ocf-test-aws.travp.net
   token-uri: ${uaa.uri}/oauth/token
   jwk-set-uri: ${uaa.uri}/token_keys
 
@@ -50,8 +52,10 @@ management:
       exposure:
         include: "*"
 scs:
+  credhub:
+    path: "${spring.credhub.path}"
   config-server:
-    authorization-uri: ${uaa.authorization-uri}
+    authorization-uri: ${uaa.uri}
     service-instance-id: ${spring.cloud.appbroker.service-instance-id}
 
 
